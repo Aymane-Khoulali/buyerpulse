@@ -1,0 +1,52 @@
+# BuyerPulse - Project Configuration
+# Academic Year: 2026-2027
+
+project:
+  name: BuyerPulse
+  version: "0.1.0"
+  random_state: 42
+
+data:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+
+  # Official UCI Online Retail II dataset
+  source: UCI Online Retail II
+
+prediction:
+  task: binary_classification
+  target: repeat_purchase_60d
+  horizon_days: 60
+
+features:
+  # Initial candidates; finalized after dataset exploration
+  rfm:
+    - recency
+    - frequency
+    - monetary
+
+  behavioral:
+    - average_order_value
+    - unique_products
+    - average_days_between_orders
+    - purchase_frequency_30d
+
+model:
+  # Initial models; subject to course requirements
+  candidates:
+    - logistic_regression
+    - knn
+    - decision_tree
+
+  primary_metric: average_precision
+
+evaluation:
+  split_strategy: chronological
+  # Exact observation dates and temporal gaps will be
+  # determined after exploring dataset coverage.
+
+paths:
+  model_dir: models
+  reports_dir: reports
+  figures_dir: reports/figures
