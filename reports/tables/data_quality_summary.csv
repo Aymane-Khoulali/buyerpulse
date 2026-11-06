@@ -1,0 +1,11 @@
+Metric,Count,Percentage (%)
+Total transaction rows,1067371,100.0
+Missing Customer ID,243007,22.77
+Missing Description,4382,0.41
+Cancelled invoice rows,19494,1.83
+Negative quantity,22950,2.15
+Zero quantity,0,0.0
+Negative price,5,0.0
+Zero price,6202,0.58
+Exact duplicates within worksheets,12133,1.14
+Redundant cross-year overlap rows,22523,2.11
